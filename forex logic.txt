@@ -1,0 +1,18 @@
+package random_data_generator;
+
+public class Forex_conversion_rate {
+	
+public static void main(String[] args) {
+	double EUR_USD_Rate=getConversionRate(1.1,1.2,0.01);
+	System.out.println("EUR/USD Conversion rate : " +EUR_USD_Rate);
+	double GBP_USD_Rate=getConversionRate(1.2,1.3,0.01);
+	System.out.println("EUR/USD Conversion rate : " +GBP_USD_Rate);
+}
+
+public static double getConversionRate(double min,double max,double step) {
+	double rate= (Math.random()*((max-min)+1));
+	double step_rate=rate - rate%step + min;
+	double conversion_rate=Math.round(step_rate*100.0)/100.0;
+	return conversion_rate;
+}
+}
