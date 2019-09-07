@@ -15,6 +15,7 @@ body{
     color: white;
     text-align: center;
     padding: 12px;
+    padding-right: 8vh;
     text-decoration: none;
     font-size: 22px; 
     line-height: 28px;
@@ -23,7 +24,7 @@ body{
   
 .contain
 {
-    height: 800px;
+    height: 100vh;
 }
 
   .header a.logo
@@ -55,4 +56,30 @@ body{
 .vector2
 {
     position: absolute;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 #000000;
+  transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(24, 23, 23, 0.2);
+}
+
+
+.container-fluid
+{
+  padding: 70px;
+}
+
+.card-text
+{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
 }
