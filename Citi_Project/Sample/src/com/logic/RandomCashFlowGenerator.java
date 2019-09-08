@@ -41,7 +41,8 @@ public class RandomCashFlowGenerator {
 			t.setDebitCredit('D');
 		
 		double data=random.nextDouble()*(7000000-1000000)+7000000;
-		t.setAmount(data);System.out.println(t.getDebitCredit());
+		t.setAmount(data);
+		System.out.println(t.getDebitCredit());
 		System.out.println("id"+t.getTransactionId());
 
 	System.out.println("amount"+df.format(data));	

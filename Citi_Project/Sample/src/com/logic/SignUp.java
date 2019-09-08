@@ -22,6 +22,6 @@ public class SignUp {
 		acc.setAccountNo_USD(123456);
 		acc.setAccountNo_GBP(123457);
 		acc.setAccountNo_EURO(123458);
-		acc.setOpeningBalance(500000000.0000f);
+	//	acc.setOpeningBalance(500000000.0000);
 	}
 }

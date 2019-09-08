@@ -11,7 +11,7 @@ public class Trigger {
 	
 	
 	
-	RandomCashFlowGenerator RCG=new RandomCashFlowGenerator();
+//	RandomCashFlowGenerator RCG=new RandomCashFlowGenerator();
 //	RCG.cashflow();
 	}
 }
