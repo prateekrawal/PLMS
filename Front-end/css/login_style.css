@@ -26,6 +26,11 @@
     font-weight: 800;
 }
 
+.button-content {
+    font-family: 'RaleWay', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+}
 .login-card-position {
     position: absolute;
     margin-left: 20%;
