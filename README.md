@@ -8,9 +8,29 @@ The aim of project is to determine the optimal way to Lend or Borrow given IR ra
 Figma Link
 
 https://www.figma.com/file/1mpTCbZsUat6b6eYWEmFBv/PLMS-Landing-Page?node-id=0%3A1
-
+=======
 Dashboard suggestions :
 https://dribbble.com/shots/5029223-Modern-Admin-Clean-Bootstrap-4-Dashboard-HTML-Template
 https://demos.creative-tim.com/paper-dashboard-pro/examples/dashboard/overview.html
 *https://demos.creative-tim.com/argon-dashboard-pro-react/#/admin/charts
 *https://demos.creative-tim.com/argon-dashboard-react/#/admin/index
+
+
+
+For Icons Please use this Library:-
+
+<link href="../assets/js/plugins/nucleo/css/nucleo.css" rel="stylesheet"/>
+
+These Stylesheet are in a folder name nucleo in this repo
+
+
+For more info about icons:- https://github.com/creativetimofficial/argon-dashboard/blob/master/examples/login.html
+
+
+
+https://demos.creative-tim.com/argon-dashboard-pro-react/#/admin/charts
+
+https://demos.creative-tim.com/argon-dashboard-react/#/admin/index
+
+
+Use above two links for Dashboard design along with figma  ADD ICONS IN DASHBOARD Its not there in figma
