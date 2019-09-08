@@ -12,4 +12,5 @@ https://www.figma.com/file/1mpTCbZsUat6b6eYWEmFBv/PLMS-Landing-Page?node-id=0%3A
 Dashboard suggestions :
 https://dribbble.com/shots/5029223-Modern-Admin-Clean-Bootstrap-4-Dashboard-HTML-Template
 https://demos.creative-tim.com/paper-dashboard-pro/examples/dashboard/overview.html
-https://demos.creative-tim.com/black-dashboard-pro-react/#/admin/dashboard
+*https://demos.creative-tim.com/argon-dashboard-pro-react/#/admin/charts
+*https://demos.creative-tim.com/argon-dashboard-react/#/admin/index
