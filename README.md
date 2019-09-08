@@ -14,5 +14,16 @@ For Icons Please use this Library:-
 
 <link href="../assets/js/plugins/nucleo/css/nucleo.css" rel="stylesheet"/>
 
+These Stylesheet are in a folder name asset in this repo
+
 
 For more info about icons:- https://github.com/creativetimofficial/argon-dashboard/blob/master/examples/login.html
+
+
+
+https://demos.creative-tim.com/argon-dashboard-pro-react/#/admin/charts
+
+https://demos.creative-tim.com/argon-dashboard-react/#/admin/index
+
+
+Use above two links for Dashboard design along with figma  ADD ICONS IN DASHBOARD Its not there in figma
