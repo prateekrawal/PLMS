@@ -1,0 +1,37 @@
+.main-heading {
+    font-family: 'RaleWay', sans-serif;
+    font-style: normal;
+    font-size: 40px;
+    line-height: 63px;
+    color: white;
+    text-align: center;
+    padding-top: 2%;
+}
+
+.main-heading-light {
+    font-weight: 100;
+}
+
+.content {
+    font-family: 'RaleWay', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+}
+
+.card {
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+}
+
+.form-input {
+    border: none;
+    background-color: rgba(196, 196, 196, 0.2);
+}
+
+.button-content {
+    font-family: 'RaleWay', sans-serif;
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 500;
+}
