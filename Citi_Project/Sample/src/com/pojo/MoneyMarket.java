@@ -10,6 +10,28 @@ public class MoneyMarket
 	private double amount_EURO;
 	private double amount_GBP;
 	private int transactionId;
+	private static  double EURO_Base;
+	private static double GBP_Base;
+	private static double USD_Base;
+	
+	public double getEURO_Base() {
+		return EURO_Base;
+	}
+	public void setEURO_Base(double eURO_Base) {
+		EURO_Base = eURO_Base;
+	}
+	public double getGBP_Base() {
+		return GBP_Base;
+	}
+	public void setGBP_Base(double gBP_Base) {
+		GBP_Base = gBP_Base;
+	}
+	public double getUSD_Base() {
+		return USD_Base;
+	}
+	public void setUSD_Base(double uSD_Base) {
+		USD_Base = uSD_Base;
+	}
 	public String getLendBorrow() {
 		return lendBorrow;
 	}
