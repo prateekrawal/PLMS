@@ -2,15 +2,33 @@ package com.pojo;
  
 public class Account 
 {
-	protected String currencyType;
-	protected float balance;
+//	protected String currencyType;
+//	protected float balance;
 	private long AccountNo_USD=123345;
 	private long AccountNo_EURO=12346;
 	private long AccountNo_GBP=12347;
-	private double openingBalance;
+	private static double openingBalance_EURO=50000000;
+	private static double openingBalance_USD=50000000;
+	private static double openingBalance_GBP=50000000;
 	
-	public void setOpeningBalance(double openingBalance) {
-		this.openingBalance = openingBalance;
+
+	public double getOpeningBalance_EURO() {
+		return openingBalance_EURO;
+	}
+	public void setOpeningBalance_EURO(double openingBalance_EURO) {
+		this.openingBalance_EURO = openingBalance_EURO;
+	}
+	public double getOpeningBalance_USD() {
+		return openingBalance_USD;
+	}
+	public void setOpeningBalance_USD(double openingBalance_USD) {
+		this.openingBalance_USD = openingBalance_USD;
+	}
+	public double getOpeningBalance_GBP() {
+		return openingBalance_GBP;
+	}
+	public void setOpeningBalance_GBP(double openingBalance_GBP) {
+		this.openingBalance_GBP = openingBalance_GBP;
 	}
 	public long getAccountNo_USD() {
 		return AccountNo_USD;
