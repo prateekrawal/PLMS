@@ -4,23 +4,19 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Random;
 
-import com.dao.TransactionDAO;
-import com.dao.TransactionDAOImpl;
-import com.pojo.Account;
 import com.pojo.Transaction;
+import com.pojo.User;
 
 public class RandomCashFlowGenerator {
 
 	Random random = new Random();
-	Account account = new Account();
+	User user = new User();
 	DecimalFormat df = new DecimalFormat("#.####");
-	TransactionDAO txn_dao=new TransactionDAOImpl();
-
 	
-	public void cashflow(Account account) {
-		generateCashflow(account.getAccountNo_EURO());
-		generateCashflow(account.getAccountNo_USD());
-		generateCashflow(account.getAccountNo_GBP());
+	public void cashflow() {
+		generateCashflow(user.getAccountNo_EURO());
+		generateCashflow(user.getAccountNo_USD());
+		generateCashflow(user.getAccountNo_GBP());
 	}
 
 	public ArrayList<Transaction> generateCashflow(long accno) {
@@ -31,11 +27,7 @@ public class RandomCashFlowGenerator {
 
 			t_AL.add(createTransactions());
 		}
-		//func call to dao with (t_AL,accno);
-		System.out.println("Going to Txn_dao add transaction");
-		//System.out.println("t_Al : " + t_AL);
-		txn_dao.addTransaction(t_AL, accno);
-		System.out.println(" came back to randomcashflow class after Adding txn");
+		// func call to dao with (t_AL,accno);
 		return t_AL;
 	}
 
@@ -44,17 +36,27 @@ public class RandomCashFlowGenerator {
 		t.setTransactionId(++App.TID_Counter);
 		int temp = (random.nextInt(10 - 1) + 1) % 2;
 		if (temp == 0)
-			t.setDebitCredit("Credit");
+			t.setDebitCredit('C');
 		else
-			t.setDebitCredit("Debit");
+			t.setDebitCredit('D');
 
 		double data = random.nextDouble() * (7000000 - 1000000) + 7000000;
 		t.setAmount(data);
-		//System.out.println(t.getDebitCredit());
-		//System.out.println("id" + t.getTransactionId());
+		System.out.println(t.getDebitCredit());
+		System.out.println("id" + t.getTransactionId());
 
-		//System.out.println("amount" + df.format(data));
-		//System.out.println("t : " + t);
+		System.out.println("amount" + df.format(data));
+
 		return t;
+	}
+	
+	public void generateDate()
+	{
+		if(App.counter==30)
+		{
+			App.month++;
+			App.counter=1;
+		}
+		
 	}
 }
