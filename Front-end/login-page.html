@@ -14,71 +14,138 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css\login_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css\header.css">
+    <link rel="stylesheet" href="css\footer.css">
+
 </head>
 
 <body style="background-color: #003A83">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="main-heading">
-                    <p class="main-heading-position"><b>Welcome</b> <span class="main-heading-light"> to Citi's
-                            Liquidity Management System</span></p>
+    <div>
+        <div class="header">
+            <a href="landing-page.html" class="logo" style="padding: 12px"><img src="images\Group.png"
+                    style="width:118px;height:64px;"></a>
+            <img src="images/line2.png" style="height: 83.5px;"><img src="images\lms2.png"
+                style="padding-left: 1%; width: 151px; height: 64px;">
+
+            <div class="header-right">
+                <a href="#home"><b>HOME</b></a>
+                <a href="#contact"><b>SERVICES</b></a>
+                <a href="#about"><b>OUR PROCESSES</b></a>
+                <a href="#clients"><b>CLIENTS</b></a>
+                <a href="login-page.html"><b><span style="padding-right: 4px;"><i class="fa fa-user"
+                                aria-hidden="true"></i></span>LOGIN</b></a>
+            </div>
+        </div>
+
+        <div class="login_container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="main-heading">
+                        <p class="main-heading-position"><b>Welcome</b> <span class="main-heading-light"> to Citi's
+                                Liquidity Management System</span></p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card bg-light mb-3 login-card-position" style="max-width: 25rem;">
+                        <div class="card-body">
+                            <div>
+                                <span><i class="fa fa-unlock-alt" style="font-size: 3em;" aria-hidden="true"></i></span>
+                            </div>
+                            <h5 class="card-title content" style="color: #003A83">Login in with Username and <br>
+                                Password
+                            </h5>
+                            <p class="card-text">
+                                <br><br>
+                                <form class="was-validation">
+                                    <label class="sr-only" for="Username">Username</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"><span style="width: 8px;"><i
+                                                        class="fa fa-user" aria-hidden="true"></i>
+
+                                                </span></div>
+                                        </div>
+                                        <input type="text" class="form-control" id="Username" placeholder="Username"
+                                            required>
+                                    </div>
+                                    <br>
+                                    <label class="sr-only" for="Password">Password</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"><span style="width: 8px;"><i class="fa fa-key"
+                                                        aria-hidden="true"></i>
+
+                                                </span></div>
+                                        </div>
+                                        <input type="password" class="form-control" id="Password" placeholder="Password"
+                                            required>
+                                    </div>
+
+                                    <br>
+                                    <center>
+                                        <a href="#">
+                                            <button class="btn btn-primary button-content"
+                                                style="background-color: #003A83" type="button">Sign in now&nbsp;
+                                                <i class="fa fa-arrow-right" style="font-size: 1em; color: white;"
+                                                    aria-hidden="true"></i>
+                                            </button>
+                                        </a>
+                                    </center>
+                                </form>
+                                <br> <br>
+                                <center>
+                                    <a href="#"><span class="content" style="color: gray">Forgot
+                                            Password</span></a>&nbsp;|&nbsp;<span class="content"
+                                        style="color: black">New
+                                        User?</span>&nbsp;<a href="signup-page.html"><span class="content"
+                                            style="color:#003A83">Sign
+                                            Up</span></a>
+                                </center>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="card bg-light mb-3 login-card-position" style="max-width: 25rem;">
-                    <div class="card-body">
-                        <div>
-                            <span><i class="fa fa-unlock-alt" style="font-size: 3em;" aria-hidden="true"></i></span>
+        </div>
+
+        <div class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="footer-links" id="first_section">
+                            <ul style="padding-left: 25px;">
+                                <li><a href="#home">HOME</a></li>
+                                <li><a href="#services">SERVICES</a></li>
+                                <li><a href="#clients">CLIENTS</a></li>
+                                <li><a href="#about">OUR PROCESSES</a></li>
+                            </ul>
+
                         </div>
-                        <h5 class="card-title content" style="color: #003A83">Login in with Username and <br> Password
-                        </h5>
-                        <p class="card-text">
-                            <br><br>
-                            <form class="was-validation">
-                                <label class="sr-only" for="Username">Username</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text"><span style="width: 8px;"><i class="fa fa-user"
-                                                    aria-hidden="true"></i>
+                    </div>
 
-                                            </span></div>
-                                    </div>
-                                    <input type="text" class="form-control" id="Username" placeholder="Username"
-                                        required>
-                                </div>
-                                <br>
-                                <label class="sr-only" for="Password">Password</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text"><span style="width: 8px;"><i class="fa fa-key"
-                                                    aria-hidden="true"></i>
+                    <div class="col-md-3">
+                        <div class="footer-links">
+                            <ul>
+                                <li><a href="#">TERMS & CONDITIONS</a></li>
+                                <li><a href="#">PRIVACY POLICY</a></li>
+                                <li><a href="#">COOKIE CONSENT</a></li>
+                                <li><a href="#">LEGAL DISCLAIMER</a></li>
+                            </ul>
+                        </div>
+                    </div>
 
-                                            </span></div>
-                                    </div>
-                                    <input type="password" class="form-control" id="Password" placeholder="Password"
-                                        required>
-                                </div>
-
-                                <br>
-                                <center>
-                                    <a href="#">
-                                        <button class="btn btn-primary button-content" style="background-color: #003A83"
-                                            type="button">Sign in now&nbsp;
-                                            <i class="fa fa-arrow-right" style="font-size: 1em; color: white;"
-                                                aria-hidden="true"></i>
-                                        </button>
-                                    </a>
-                                </center>
-                            </form>
-                            <br> <br>
-                            <center>
-                                <a href="#"><span class="content" style="color: gray">Forgot
-                                        Password</span></a>&nbsp;|&nbsp;<span class="content" style="color: black">New
-                                    User?</span>&nbsp;<a href="signup-page.html"><span class="content" style="color:#003A83">Sign
-                                        Up</span></a>
-                            </center>
-                        </p>
+                    <div class="col-md-7">
+                        <div class="footer_corner">
+                            <div class="row">
+                                <p id="Contact_us">Contact us on.</p>
+                            </div>
+                            <div class="row">
+                                <a href=""><img src="images/icon.png"></a>
+                            </div>
+                            <div class="row" id="copyright">
+                                <p>&copy 2019 CitiCorp.All Rights Reserved.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

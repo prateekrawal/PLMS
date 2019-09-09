@@ -2,56 +2,17 @@ body{
     font-family: 'Quicksand';
 }
 
-.header {
-    overflow: hidden;
-    background-color:none;
-    padding: 20px 10px;
-  }
-  
-  .header a {
-    font-family: 'Quicksand';
-    font-style: normal;
-    float: left;
-    color: white;
-    text-align: center;
-    padding: 12px;
-    padding-right: 8vh;
-    text-decoration: none;
-    font-size: 22px; 
-    line-height: 28px;
-    line-height: 100%;
-  }
-  
 .contain
 {
     height: 100vh;
 }
-
-  .header a.logo
-  {
-      position: relative;
-  }
-  
+ 
   #managing_funds
   {
       position: relative;
       margin-left: 20%;
       margin-top: 10%;
   }
-  
-  .header-right {
-    float: right;
-    padding: 2%;
-  }
-  
-.header img
-{
-    position: relative;
-}
-.header-right a:hover
-{
-
-}
 
 .vector2
 {
@@ -94,57 +55,4 @@ body{
   padding-top: 3%;
   padding-bottom: none;
   text-align: center;
-}
-
-.footer
-{
-  height: 25vh;
-  background-color:#003A83; 
-}
-
-.footer-links
-{
-  margin-top: 50px;
-  margin-right: 16px;
-}
-
-.footer-links ul
-{
-  list-style: none;
-  padding-left: 16px;
-  
-}
-
-.footer-links ul li a
-{
-  color: white;
-  font-family: 'OpenSans';
-  font-size: 16px;
-  text-decoration: none;
-  font-weight: 10;
-}
-
-#first_section
-{
-  border-right: 2px solid white;  
-}
-
-#Contact_us
-{
-  color:white;
-  font-size: 25px;
-  margin-top:15px;
-}
-
-.footer_corner
-{
-  float:right;
-  margin-right:10vh;
-}
-
-#copyright
-{
-  color:white;
-  font-size : 15px;
-  margin-top: 30px; 
 }
