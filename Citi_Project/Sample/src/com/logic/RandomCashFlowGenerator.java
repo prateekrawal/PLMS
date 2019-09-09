@@ -11,8 +11,8 @@ public class RandomCashFlowGenerator {
 
 	Random random = new Random();
 	Account account = new Account();
-	DecimalFormat df=new DecimalFormat("#.####");
-	
+	DecimalFormat df = new DecimalFormat("#.####");
+
 	public void cashflow() {
 		generateCashflow(account.getAccountNo_EURO());
 		generateCashflow(account.getAccountNo_USD());
@@ -21,13 +21,13 @@ public class RandomCashFlowGenerator {
 
 	public ArrayList<Transaction> generateCashflow(long accno) {
 		int cnt = (int) (((Math.random() * ((10 - 1)))) + 30);
-		ArrayList<Transaction>t_AL=new ArrayList<Transaction>();
-		
+		ArrayList<Transaction> t_AL = new ArrayList<Transaction>();
+
 		for (int i = 0; i < cnt; i++) {
-			
+
 			t_AL.add(createTransactions());
 		}
-		//func call to dao with (t_AL,accno);
+		// func call to dao with (t_AL,accno);
 		return t_AL;
 	}
 
@@ -39,14 +39,14 @@ public class RandomCashFlowGenerator {
 			t.setDebitCredit('C');
 		else
 			t.setDebitCredit('D');
-		
-		double data=random.nextDouble()*(7000000-1000000)+7000000;
+
+		double data = random.nextDouble() * (7000000 - 1000000) + 7000000;
 		t.setAmount(data);
 		System.out.println(t.getDebitCredit());
-		System.out.println("id"+t.getTransactionId());
+		System.out.println("id" + t.getTransactionId());
 
-	System.out.println("amount"+df.format(data));	
+		System.out.println("amount" + df.format(data));
 
-	return t;
+		return t;
 	}
 }
