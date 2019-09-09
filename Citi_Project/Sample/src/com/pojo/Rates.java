@@ -2,17 +2,20 @@ package com.pojo;
 
 public class Rates {
 
+	public static float EURO_IR_BID = 0.2f;
+	public static float USD_IR_BID = 0.8f;
+	public static float GBP_IR_BID = 0.85f;
+	public static float EURO_IR_ASK = 0.3f;
+	public static float USD_IR_ASK = 0.9f;
+	public static float GBP_IR_ASK = 1f;
 
-	public static float EURO_IR_BID=0;
-	public static float USD_IR_BID=0;
-	public static float GBP_IR_BID=0;
-		public static float EURO_IR_ASK=0;
-	public static float USD_IR_ASK=0;
-	public static float GBP_IR_ASK=0;
-	
-	public static float EUR_USD_BID=0;
-	public static float GBP_USD_BID=0;
-	
+	public static float EUR_USD_BID = 1.12f;
+	public static float GBP_USD_BID = 1.3f;
+	public static float EUR_GBP_BID = 0.8f;
+
+	public static float EUR_USD_ASK = 1.22f;
+	public static float GBP_USD_ASK = 1.4f;
+	public static float EUR_GBP_ASK = 0.938462f;
 
 	public static float getGBP_USD_BID() {
 		return GBP_USD_BID;
@@ -29,7 +32,6 @@ public class Rates {
 	public static void setGBP_USD_ASK(float gBP_USD_ASK) {
 		GBP_USD_ASK = gBP_USD_ASK;
 	}
-
 
 	public static float getEURO_IR_BID() {
 		return EURO_IR_BID;
@@ -111,11 +113,6 @@ public class Rates {
 		EUR_GBP_ASK = eUR_GBP_ASK;
 	}
 
-	public static float EUR_GBP_BID=0;
-	
-	public static float EUR_USD_ASK=0;
-	public static float GBP_USD_ASK=0;
-	public static float EUR_GBP_ASK=0;
-	
+
 	public String date;
 }
