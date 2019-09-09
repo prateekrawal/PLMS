@@ -14,93 +14,171 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css\signup_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css\header.css">
+    <link rel="stylesheet" href="css\footer.css">
 </head>
 
 <body style="background-color: #003A83">
-    <div class="main-heading">
-        <p><b>Welcome</b> <span class="main-heading-light"> to Liquidity <br> Management Solution</span></p>
-    </div>
-    <div class="card bg-light mb-3" style="max-width: 50rem;">
-        <div class="card-body">
-            <h5 class="card-title content" style="color: #003A83"> Please enter your details
-            </h5>
-            <p class="card-text">
-                <br>
-                <form class="was-validation">
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label class="sr-only" for="firstname">Firstname</label>
-                            <input type="text" class="form-control form-input" id="firstname" placeholder="Firstname" required>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label class="sr-only" for="lastname">Lastname</label>
-                            <input type="text" class="form-control form-input" id="lastname" placeholder="Lastname" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="sr-only" for="email">Email</label>
-                        <input type="email" class="form-control form-input" id="email" placeholder="E-mail" required>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label class="sr-only" for="username">Username</label>
-                            <input type="text" class="form-control form-input" id="username" placeholder="Username" required>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label class="sr-only" for="phone">phone</label>
-                            <input type="text" class="form-control form-input" id="phone" placeholder="Phone Number" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label class="sr-only" for="password">Password</label>
-                            <input type="password" class="form-control form-input" id="password" placeholder="Password" required>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label class="sr-only" for="cnfrmpwd">cnfrmpwd</label>
-                            <input type="password" class="form-control form-input" id="cnfrmpwd" placeholder="Confirm Password" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label class="sr-only" for="usd">usd</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">$</div>
-                                </div>
-                                <input type="text" class="form-control form-input" id="usd" placeholder="balance" required>
-                            </div>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label class="sr-only" for="eur">eur</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">€</div>
-                                </div>
-                                <input type="text" class="form-control form-input" id="eur" placeholder="balance" required>
-                            </div>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label class="sr-only" for="gbp">gbp</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">£</div>
-                                </div>
-                                <input type="text" class="form-control form-input" id="gbp" placeholder="balance" required>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <center>
-                            <button class="btn btn-primary button-content" style="background-color: #003A83" type="button">Get Started&nbsp;
-                                <i class="fa fa-angle-double-right" style="font-size: 1.5em; color: white;"
-                                    aria-hidden="true"></i>
-                            </button>
-                    </center>
-                </form>
-            </p>
+    <div>
+        <div class="header">
+            <a href="landing-page.html" class="logo" style="padding: 12px"><img src="images\Group.png"
+                    style="width:118px;height:64px;"></a>
+            <img src="images/line2.png" style="height: 83.5px;"><img src="images\lms2.png"
+                style="padding-left: 1%; width: 151px; height: 64px;">
+
+            <div class="header-right">
+                <a href="#home"><b>HOME</b></a>
+                <a href="#contact"><b>SERVICES</b></a>
+                <a href="#about"><b>OUR PROCESSES</b></a>
+                <a href="#clients"><b>CLIENTS</b></a>
+                <a href="login-page.html"><b><span style="padding-right: 4px;"><i class="fa fa-user"
+                                aria-hidden="true"></i></span>LOGIN</b></a>
+            </div>
         </div>
+        <div class="signup_container">
+                <div class="main-heading">
+                        <p><b>Welcome</b> <span class="main-heading-light"> to Liquidity <br> Management Solution</span></p>
+                    </div>
+                    <div class="card bg-light mb-3" style="max-width: 50rem;">
+                        <div class="card-body">
+                            <h5 class="card-title content" style="color: #003A83"> Please enter your details
+                            </h5>
+                            <p class="card-text">
+                                <br>
+                                <form class="was-validation">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label class="sr-only" for="firstname">Firstname</label>
+                                            <input type="text" class="form-control form-input" id="firstname"
+                                                placeholder="Firstname" required>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label class="sr-only" for="lastname">Lastname</label>
+                                            <input type="text" class="form-control form-input" id="lastname" placeholder="Lastname"
+                                                required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="email">Email</label>
+                                        <input type="email" class="form-control form-input" id="email" placeholder="E-mail"
+                                            required>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label class="sr-only" for="username">Username</label>
+                                            <input type="text" class="form-control form-input" id="username" placeholder="Username"
+                                                required>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label class="sr-only" for="phone">phone</label>
+                                            <input type="text" class="form-control form-input" id="phone" placeholder="Phone Number"
+                                                required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label class="sr-only" for="password">Password</label>
+                                            <input type="password" class="form-control form-input" id="password"
+                                                placeholder="Password" required>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label class="sr-only" for="cnfrmpwd">cnfrmpwd</label>
+                                            <input type="password" class="form-control form-input" id="cnfrmpwd"
+                                                placeholder="Confirm Password" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                            <label class="sr-only" for="usd">usd</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">$</div>
+                                                </div>
+                                                <input type="text" class="form-control form-input" id="usd" placeholder="balance"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="sr-only" for="eur">eur</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">€</div>
+                                                </div>
+                                                <input type="text" class="form-control form-input" id="eur" placeholder="balance"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="sr-only" for="gbp">gbp</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">£</div>
+                                                </div>
+                                                <input type="text" class="form-control form-input" id="gbp" placeholder="balance"
+                                                    required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <center>
+                                        <button class="btn btn-primary button-content" style="background-color: #003A83"
+                                            type="button">Get Started&nbsp;
+                                            <i class="fa fa-angle-double-right" style="font-size: 1.5em; color: white;"
+                                                aria-hidden="true"></i>
+                                        </button>
+                                    </center>
+                                </form>
+                            </p>
+                        </div>
+                    </div>
+        </div>
+        
+        <div class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="footer-links" id="first_section">
+                                <ul style="padding-left: 25px;">
+                                    <li><a href="#home">HOME</a></li>
+                                    <li><a href="#services">SERVICES</a></li>
+                                    <li><a href="#clients">CLIENTS</a></li>
+                                    <li><a href="#about">OUR PROCESSES</a></li>
+                                </ul>
+    
+                            </div>
+                        </div>
+    
+                        <div class="col-md-3">
+                            <div class="footer-links">
+                                <ul>
+                                    <li><a href="#">TERMS & CONDITIONS</a></li>
+                                    <li><a href="#">PRIVACY POLICY</a></li>
+                                    <li><a href="#">COOKIE CONSENT</a></li>
+                                    <li><a href="#">LEGAL DISCLAIMER</a></li>
+                                </ul>
+                            </div>
+                        </div>
+    
+                        <div class="col-md-7">
+                            <div class="footer_corner">
+                                <div class="row">
+                                    <p id="Contact_us">Contact us on.</p>
+                                </div>
+                                <div class="row">
+                                    <a href=""><img src="images/icon.png"></a>
+                                </div>
+                                <div class="row" id="copyright">
+                                    <p>&copy 2019 CitiCorp.All Rights Reserved.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
     </div>
+
+
 </body>
 
 </html>
