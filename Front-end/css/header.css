@@ -3,7 +3,10 @@
     background-color:none;
     padding: 20px 10px;
   }
-  
+  .header a:hover
+  {
+    color:#24292d;
+  }
   .header a {
     font-family: 'Quicksand';
     font-style: normal;
