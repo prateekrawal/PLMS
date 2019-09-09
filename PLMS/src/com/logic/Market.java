@@ -6,6 +6,7 @@ import com.pojo.Account;
 import com.pojo.MoneyMarket;
 import com.pojo.Rates;
 import com.pojo.Transaction;
+import com.pojo.User;
 
 public class Market {
 
@@ -20,22 +21,27 @@ public class Market {
 	MoneyMarket moneymarket = new MoneyMarket();
 	Rates rate = new Rates();
 	Account acc = new Account();
-
+	User user=new User();
+	
 	public void start() {
-//		RandomCashFlowGenerator RCG = new RandomCashFlowGenerator();
-//		t_AL_EURO = RCG.generateCashflow(account.getAccountNo_EURO()); // cashflow func to be called in trigger class
-//		t_AL_GBP = RCG.generateCashflow(account.getAccountNo_GBP()); // cashflow func to be called in trigger class
-//		t_AL_USD = RCG.generateCashflow(account.getAccountNo_USD()); // cashflow func to be called in trigger class
-//
-//		Market market = new Market();
-//		moneymarket.setAmount_USD(market.cal_netBal(t_AL_USD, acc.getOpeningBalance_USD()));
-//		moneymarket.setAmount_EURO(market.cal_netBal(t_AL_EURO, acc.getOpeningBalance_EURO()));
-//		moneymarket.setAmount_GBP(market.cal_netBal(t_AL_GBP, acc.getOpeningBalance_GBP()));
+		RandomCashFlowGenerator RCG = new RandomCashFlowGenerator();
+	
+		RCG.generateDate();
+		
+		t_AL_EURO = RCG.generateCashflow(user.getAccountNo_EURO()); // cashflow func to be called in trigger class
+		t_AL_GBP = RCG.generateCashflow(user.getAccountNo_GBP()); // cashflow func to be called in trigger class
+		t_AL_USD = RCG.generateCashflow(user.getAccountNo_USD()); // cashflow func to be called in trigger class
+
+		Market market = new Market();
+		moneymarket.setAmount_USD(market.cal_netBal(t_AL_USD, acc.getOpeningBalance_USD()));
+		moneymarket.setAmount_EURO(market.cal_netBal(t_AL_EURO, acc.getOpeningBalance_EURO()));
+		moneymarket.setAmount_GBP(market.cal_netBal(t_AL_GBP, acc.getOpeningBalance_GBP()));
 
 		moneymarket.setEURO_Base(cal_netBaseEURO());
 		moneymarket.setGBP_Base(cal_netBaseGBP());
 		moneymarket.setUSD_Base(cal_netBaseUSD());
-
+		System.out.println("DATE:"+ App.counter+"/"+App.month+"/19");
+		
 //		System.out.println("Euro : "+EURO_Base+" GBP : "+GBP_Base+" USD : "+USD_Base);
 	}
 
@@ -59,7 +65,7 @@ public class Market {
 
 		double total = openbal; // total to be stored back in DB via market class
 		for (int i = 0; i < arr.size(); i++) {
-			if (arr.get(i).getDebitCredit().equals("Debit"))
+			if (arr.get(i).getDebitCredit() == 'D')
 				total = total - arr.get(i).getAmount();
 			else
 				total = total + arr.get(i).getAmount();
