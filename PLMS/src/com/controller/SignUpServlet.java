@@ -9,8 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dao.AccountDAO;
+import com.dao.AccountDAOImpl;
+import com.dao.TransactionDAO;
+import com.dao.TransactionDAOImpl;
 import com.dao.UserDAO;
 import com.dao.UserDAOImpl;
+import com.logic.RandomCashFlowGenerator;
+import com.pojo.Account;
 import com.pojo.User;
 
 /**
@@ -37,8 +43,12 @@ public class SignUpServlet extends HttpServlet {
 		 long accountNo_GBP=Long.parseLong(request.getParameter("AccountGBP"));
 		
 		 UserDAO userDao=new UserDAOImpl();
+		 AccountDAO accDAO=new AccountDAOImpl();
+		 RandomCashFlowGenerator RCFG=new RandomCashFlowGenerator();
+		
 		 int rows=userDao.addUser(new User(userid, username, password, firstName, lastName, mailId, country, phoneNo, accountNo_USD, accountNo_EUR, accountNo_GBP));
-		 
+		 int acc_details=accDAO.addAccountDetails(new Account(accountNo_USD, accountNo_EUR, accountNo_GBP) , new User(userid, username, password, firstName, lastName, mailId, country, phoneNo, accountNo_USD, accountNo_EUR, accountNo_GBP));
+		 RCFG.cashflow(new Account(accountNo_USD, accountNo_EUR, accountNo_GBP));
 		
 		 if(rows>0) {
 			 RequestDispatcher dispatcher= request.getRequestDispatcher("dashboard.jsp");
