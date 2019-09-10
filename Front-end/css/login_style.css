@@ -9,6 +9,19 @@
     width: 600px;
     height: 54px;
 }
+.main-sub-heading{
+    font-family: 'RaleWay', sans-serif;
+    font-style: normal;
+    font-size: 30px;
+    line-height: 63px;
+    color: rgb(167, 231, 231);
+    position: relative;
+    top:200px;
+    bottom: 130px;
+    width: 600px;
+    height: 54px;
+
+}
 
 .main-heading-position
 {

@@ -7,6 +7,15 @@
     text-align: center;
     padding-top: 2%;
 }
+.main-sub-heading {
+    font-family: 'RaleWay', sans-serif;
+    font-style: normal;
+    font-size: 30px;
+    line-height: 30px;
+    color: white;
+    text-align: center;
+    
+}
 
 .main-heading-light {
     font-weight: 100;
