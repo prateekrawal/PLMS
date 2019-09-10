@@ -1,0 +1,43 @@
+.main-heading {
+    
+    font-family: 'RaleWay', sans-serif;
+    font-style: normal;
+    font-size: 45px;
+    line-height: 63px;
+    color: white;
+    position: absolute;
+    width: 600px;
+    height: 54px;
+}
+
+.main-heading-position
+{
+    position: absolute;
+    margin-left: 20%;
+    margin-top: 40%;   
+}
+.main-heading-light {
+    font-weight: 100;
+}
+
+.content {
+    font-family: 'RaleWay', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+}
+
+.button-content {
+    font-family: 'RaleWay', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+}
+.login-card-position {
+    position: absolute;
+    margin-left: 20%;
+    margin-top: 16%;
+}
+
+.login_container
+{
+    height: 90vh;
+}
