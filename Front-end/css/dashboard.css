@@ -1,0 +1,197 @@
+.container-fluid {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.col-md-3
+{
+    padding-right: 0px;
+}
+
+.col-md-9
+{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.row
+{
+    margin-right: 0px;
+}
+
+nav {
+    background:white;
+  }
+ 
+  /* Clear floats after the columns */
+  section:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+.company-logo
+{
+    padding: 12px;
+    margin-top:25px;
+    margin-bottom: 40px;
+}
+
+
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+  }
+  
+  nav ul li a, .item{
+    display: block;
+    color: #000;
+    padding: 22px;
+    padding-left: 36px;
+    text-decoration: none;
+    font-family: "Quicksand";
+    font-weight: 70;
+    font-size: 20px;
+
+  }
+  
+  /* Change the link color on hover */
+  li a:hover, .item:hover {
+    background-color:#f1f1f1;
+    text-decoration: none;
+    color: black;
+  }
+
+ .item ul, .item input[type="checkbox"]
+{
+    display: none;
+}
+
+
+.arrow {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin-right: 20px;
+    float: right;
+}
+
+
+
+.item input + .arrow {
+    transform: rotate(0deg);
+    transition: 0.1s;
+}
+.item input:checked + .arrow {
+    transform: rotate(90deg);
+    transition: 0.1s;
+}
+
+
+.item input:checked ~ ul {
+    display: block;
+}
+
+
+
+.item
+{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+.item input[type="checkbox"]
+{
+    width: 360px;
+    height: 60px;
+    position: absolute;
+}
+.item label
+{
+    padding-left: 36px;
+}
+
+.content-right-side
+{
+    background: linear-gradient(0deg, transparent, 50%, #004785 50%);
+}
+
+.navigate
+{
+    min-height: 100vh;
+    height: 100%;
+    box-shadow: 0 4px 8px 0 #000000;
+    transition: 0.3s;
+}
+
+.dashboard_header
+{
+    height: 10vh;
+    margin-top: 30px;
+}
+
+.welcome_user h5
+{
+    font-family: 'Quicksand';
+    font-weight: bold;
+    font-size: 30px;
+    color:white;
+    margin-left:3%;
+    margin-bottom: 3%;
+}
+
+.dashboard_header p
+{
+    font-family: 'Quicksand';
+    font-size: 20px;
+    color:white;
+    font-size: 26px;
+    margin-left:5%;
+    line-height: 0.5;
+}
+
+.fa-refresh, .fa-bell, .fa-user
+{
+    color: white;
+    margin-left: 30px;
+} 
+
+.card
+{
+    height: 121px;
+}
+.card-body p{
+    margin-bottom: 0px;
+    font-weight: bold;
+    font-size: 25px;
+}
+.card-text
+{
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+.card-body
+{
+    padding-left: 30px;
+}
+
+
+.symbols
+{
+    float: right;
+    vertical-align: top;
+}
+
+.icons-right
+{
+    float: right;
+}
+
