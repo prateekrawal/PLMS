@@ -1,42 +1,39 @@
 package com.pojo;
 
-public class Transaction {
+import java.sql.Timestamp;
 
-	private char debitCredit;
+public class Transaction 
+{
+
+	
+	private String debitCredit;
 	private double amount;
 	private int transactionId;
-	private String timestamp;
-
-	public char getDebitCredit() {
+	private Timestamp timestamp;
+	public String getDebitCredit() {
 		return debitCredit;
 	}
-
-	public void setDebitCredit(char debitCredit) {
+	public void setDebitCredit(String debitCredit) {
 		this.debitCredit = debitCredit;
 	}
-
 	public double getAmount() {
 		return amount;
 	}
-
 	public void setAmount(double d) {
 		this.amount = d;
 	}
-
 	public int getTransactionId() {
 		return transactionId;
 	}
-
 	public void setTransactionId(int transactionId) {
 		this.transactionId = transactionId;
 	}
-
-	public String getTimestamp() {
+	public Timestamp getTimestamp() {
 		return timestamp;
 	}
-
-	public void setTimestamp(String timestamp) {
+	public void setTimestamp(Timestamp timestamp) {
 		this.timestamp = timestamp;
 	}
-
+	
+	
 }
