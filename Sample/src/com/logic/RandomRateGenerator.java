@@ -2,7 +2,9 @@ package com.logic;
 
 import java.text.DecimalFormat;
 import java.util.Random;
+import java.util.Scanner;
 
+import com.dao.FXDAOImpl;
 import com.dao.InterestDAOImpl;
 import com.pojo.Rates;
 import com.pojo.Transaction;
@@ -14,6 +16,8 @@ public class RandomRateGenerator {
 	DecimalFormat df = new DecimalFormat("#.####");
 	DecimalFormat df1 = new DecimalFormat("#.##");
 
+	InterestDAOImpl idao=new InterestDAOImpl();
+			
 	public void IR() {
 		Rates.USD_IR_BID = generateIR();
 		Rates.EURO_IR_BID = generateIR();
@@ -37,8 +41,7 @@ public class RandomRateGenerator {
 
 		
 	rate.date=App.date;
-		InterestDAOImpl interest=new InterestDAOImpl();
-				interest.addInterest();
+	idao.addInterest();
 	
 	}
 
@@ -50,6 +53,44 @@ public class RandomRateGenerator {
 		return rate;
 	}
 
+	public void changeFXIR()
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter IR :");
+		System.out.println("euro bid:");
+		Rates.EURO_IR_BID=sc.nextFloat();
+		System.out.println("euro ask:");
+		Rates.EURO_IR_ASK=sc.nextFloat();
+		System.out.println("gbp bid:");
+		Rates.GBP_IR_BID=sc.nextFloat();
+		System.out.println("gbp ask:");
+		Rates.GBP_IR_ASK=sc.nextFloat();
+		System.out.println("usd bid:");
+		Rates.USD_IR_BID=sc.nextFloat();
+		System.out.println("usd ask:");
+		Rates.USD_IR_ASK=sc.nextFloat();
+
+		
+		System.out.println("Enter FX:");
+		System.out.println("Enter eur usd bid:");
+		Rates.EUR_USD_BID=sc.nextFloat();
+		System.out.println("Enter eur usd ask:");
+		Rates.EUR_USD_ASK=sc.nextFloat();
+//		System.out.println("Enter eur gbp bid:");
+//		Rates.EUR_GBP_BID=sc.nextFloat();
+//		System.out.println("Enter eur gbp ask:");
+//		Rates.EUR_GBP_ASK=sc.nextFloat();
+		System.out.println("Enter gbp usd bid:");
+		Rates.GBP_USD_BID=sc.nextFloat();
+		System.out.println("Enter gbp usd ask:");
+		Rates.GBP_USD_ASK=sc.nextFloat();
+		generate_EUR_GBP();
+		
+		FXDAOImpl fdao=new FXDAOImpl();
+		fdao.addFXRates();
+		idao.addInterest();
+	}
+	
 	public void FX() {
 
 		Rates.EUR_USD_BID = generateFX(1.14, 1.2);

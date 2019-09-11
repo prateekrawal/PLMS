@@ -22,13 +22,11 @@ public class RandomCashFlowGenerator {
 //		generateCashflow(user.getAccountNo_GBP());
 //	}
 
-	public ArrayList<Transaction> generateCashflow(long accno,String date) {
+	public ArrayList<Transaction> generateCashflow(long accno,String date,int cnt) {
 	
 		
 		TransactionDAOImpl tdao=new TransactionDAOImpl();
-		
-		int cnt = (int) (((Math.random() * ((10 - 1)))) + 30);
-		ArrayList<Transaction> t_AL = new ArrayList<Transaction>();
+				ArrayList<Transaction> t_AL = new ArrayList<Transaction>();
 
 		for (int i = 0; i < cnt; i++) {
 
