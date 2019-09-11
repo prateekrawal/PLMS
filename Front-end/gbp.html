@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PALM</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css\login_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css\dashboard.css">
+    <link rel="stylesheet" href="css\footer.css">
+    <link rel="stylesheet" href="css\usd.css">
+    <link href="css/txn.css" rel="stylesheet">
+    <link rel="stylesheet" href="fontawesome\css\all.css">
+    <!-- Icons -->
+    <link href="css\nucleo.css" rel="stylesheet" />
+    <link href="css\all.min.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <!-- <link href="css\argon-dashboard.css?v=1.1.0" rel="stylesheet" /> -->
+
+</head>
+
+
+<body>
+
+    <div>
+
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-md-2 navigate">
+                    <div class="sidebar">
+
+                        <div class="company-logo">
+                            <a href="landing-page.html" class="logo" style="padding-left: 17px"><img
+                                    src="images\citi_logo.png" style="width:92px;height:50px;"></a>
+                            <img src="images/Vector.jpg" style="height: 50px;"><img src="images\lms.png"
+                                style="padding-left: 4%;height: 50px;">
+                        </div>
+                        <div>
+                            <nav class="sidenav">
+                                <ul>
+                                    <li><a href="dashboard.html">Dashboard</a></li>
+                                    <li>
+                                        <div class="item">
+                                            <!-- <input type="checkbox" id="A"><img
+                                            src="images/arrow.png" class="arrow"> -->
+
+                                            <button class="dropdown-btn">Accounts
+                                                <i class="fa fa-caret-down"></i>
+
+                                            </button>
+                                            <div class="dropdown-container">
+                                                <ul>
+                                                    <a href="usd.html">USD</a>
+                                                    <a href="eur.html">EUR</a>
+                                                    <a href="gbp.html">GBP</a>
+                                            </div>
+
+                                        </div>
+                                    </li>
+
+                                    <li><a href="managefunds.html">Manage Funds</a></li>
+                                    <li><a href="#">Analysis</a></li>
+                                    <li><a href="#">User Profile</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="col-md-10 content-right-side">
+                    <div class="dashboard_header">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p style="font-family: 'Raleway'">Wednesday</p>
+                                <p>7th Aug, 2019</p>
+                            </div>
+
+                            <div class="col-md-6 ">
+                                <div class="icons-right" style="padding-right:4%">
+                                    <i class="fa fa-bell fa-2x" aria-hidden="true"></i>
+                                    <a href="#"><i class="fas fa-sign-out-alt fa-2x"></i></a>
+                                    
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="welcome_user">
+                        <h5>Welcome User</h5>
+                    </div>
+                    <div class="cards">
+                        <div class="row">
+                            <div class="col-md-3" align="center">
+                                <div class="card" style="width: 15rem;height: 121px;">
+                                    <div class="card-body">
+                                        <p class="card-text" style="font-weight: normal; font-size: 20px;">Balance
+                                            <i class="fa fa-gbp fa-2x symbols circle-icon-usd" aria-hidden="true"></i>
+                                        </p>
+
+                                        <p class="balance" style="font-weight: 100;font-size:30px;">12345.45</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3" align="center">
+                                <div class="card" style="width: 15rem;height: 121px;">
+                                    <div class="card-body">
+                                        <p class="card-text" style="font-weight: normal; font-size: 20px;">Inflow
+
+                                            <i class="fas fa-arrow-down fa-2x symbols circle-icon-in" aria-hidden="true"></i>
+                                        </p>
+
+                                        <p class="balance" style="font-weight: 100;font-size:30px;">12345.45</p>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3" align="center">
+                                <div class="card" style="width: 15rem;height: 121px;">
+                                    <div class="card-body">
+                                        <p class="card-text" style="font-weight: normal; font-size: 20px;">Outflow
+
+                                            <i class="fas fa-arrow-up fa-2x symbols circle-icon-out" aria-hidden="true"></i>
+                                        </p>
+
+                                        <p class="balance" style="font-weight: 100;font-size:30px;">12345.45</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3" align="center">
+                                <div class="card" style="width: 15rem;height: 121px;">
+                                    <div class="card-body">
+                                        <p class="card-text" style="font-weight: normal; font-size: 20px;">Money Market
+                                            <i class="fas fa-wallet fa-2x symbols circle-icon-wallet"
+                                                aria-hidden="true"></i>
+                                        </p>
+                                        <p class="balance" style="float:left; font-weight: 100;font-size:30px;">Obligation
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="transactions">
+
+                        <div class="row fx-rate">
+                            <div class="shadow card" id="fxtable">
+                                <div class="border-0 card-header">
+                                    <div class="align-items-center row">
+                                        <div class="col">
+                                            <b class="mb-0" style="font-size: 22px; font-family: 'Quicksand';">Account No. : <span>4695346438</span></b>
+                                            <button class="btn btn-primary button-content" style="background-color: #003A83 ; float: right;" id= "myBtn" type="button">Make Transaction
+                                        </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="align-items-center table">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th scope="col">Date</th>
+                                                <th scope="col">Transaction ID</th>
+                                                <th scope="col">Amount</th>
+                                                <th scope="col">Balance</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>12/08/2019</td>
+                                                <td>63874389280</td>
+                                                <td>138291</td>
+                                                <td>158908</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="footer-links" id="first_section">
+                                <ul style="padding-left: 25px;">
+                                    <li><a href="#home">HOME</a></li>
+                                    <li><a href="#services">SERVICES</a></li>
+                                    <li><a href="#clients">CLIENTS</a></li>
+                                    <li><a href="#about">OUR PROCESSES</a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="footer-links">
+                                <ul>
+                                    <li><a href="#">TERMS & CONDITIONS</a></li>
+                                    <li><a href="#">PRIVACY POLICY</a></li>
+                                    <li><a href="#">COOKIE CONSENT</a></li>
+                                    <li><a href="#">LEGAL DISCLAIMER</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-7">
+                            <div class="footer_corner">
+                                <div class="row">
+                                    <p id="Contact_us">Contact us on.</p>
+                                </div>
+                                <div class="row">
+                                    <a href=""><img src="images/icon.png"></a>
+                                </div>
+                                <div class="row" id="copyright">
+                                    <p>&copy 2019 CitiCorp.All Rights Reserved.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="form" style="align-self: center; width:80%">
+              <div class="card bg-light mb-3" style="width: 100%; align-content: center;">
+                      <div class="card-body"></div>
+                      <h5 class="card-title content" style="color: #003A83; align-self: center;" > Please enter details of Transaction </h5>
+                          <p class="card-text">
+                              <br>
+                              <form class="was-validation">
+                                  <div class="form-row">
+                                      <div class="form-group col-md-6" style="padding:20px;">
+                                          <select class="form-control">
+                                                  <option value="Dollar">Dollar</option>
+                                                  <option value="Pound">Pound</option>
+                                                  <option value="Euro">Euro</option>
+                                              
+                                          </select>
+                                          <!-- <input type="text" class="form-input" id="currency"
+                                              placeholder="Currency" required> -->
+                                      </div>
+                                      <div class="form-group col-md-6"style="padding:20px;">
+                                              <select class="form-control">
+                                                      <option value="Inflow">Inflow</option>
+                                                      <option value="Outflow">Outflow</option>
+                                              </select>
+                                              <!-- <input type="text" class="form-input" id="currency"
+                                                  placeholder="Currency" required> -->
+                                          </div>
+                                  </div>
+                                  <div class="form-group" style="padding:20px;">
+                                      <label class="sr-only" for="Amount">Amount</label>
+                                      <input type="Amount" class="form-control form-input" id="Amount" placeholder="Amount"
+                                          required>
+                                  </div>
+                                 
+                                  </div>
+                              </centre>
+                                  <br>
+                                  <center>
+                                      <button class="btn btn-primary button-content" style="background-color: #003A83"
+                                          type="button" id="done">Done</button>
+                                  </center>
+                              </form>
+                          </p>
+                      </div>
+                  </div>
+      </div>
+    </div>
+  
+  </div>
+  
+
+
+    <script type="text/javascript" src="js/dashboard.js"></script>
+    <script src="js/Transaction.js"></script>
+</body>
+
+</html>
