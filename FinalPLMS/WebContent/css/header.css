@@ -1,0 +1,38 @@
+.header {
+    overflow: hidden;
+    background-color:none;
+    padding: 20px 10px;
+  }
+  
+  .header a {
+    font-family: 'Quicksand';
+    font-style: normal;
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    padding-right: 8vh;
+    text-decoration: none;
+    font-size: 22px; 
+    line-height: 28px;
+    line-height: 100%;
+  }
+
+  .header a.logo
+  {
+      position: relative;
+  }
+  
+  .header-right {
+    float: right;
+    padding: 2%;
+  }
+  
+.header img
+{
+    position: relative;
+}
+.header-right a:hover
+{
+
+}
