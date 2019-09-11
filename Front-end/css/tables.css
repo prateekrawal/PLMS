@@ -1,0 +1,30 @@
+.fx-rate, .ir-rate
+{
+    padding-top: 40px;
+    padding-right: 15px;
+    padding-left: 50px;
+    padding-bottom: none;
+}
+.table-responsive
+{
+    width: 100%;
+    height: 100%;
+    overflow-y:hidden;
+    overflow-x: auto;
+}
+#fxtable
+{
+    width:100%
+}
+
+.rate-tables-trigger
+{
+    padding-bottom: 30px;
+}
+.pooled
+{
+    padding-top: 40px;
+    padding-right: 28px;
+    padding-left: 50px;
+    padding-bottom: none;
+}
