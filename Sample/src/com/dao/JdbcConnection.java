@@ -13,6 +13,7 @@ public class JdbcConnection {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 //			System.out.println("Driver loaded sucessfully");
 			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "pl_mmt", "plm1234");
+		
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

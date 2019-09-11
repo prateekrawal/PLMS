@@ -1,20 +1,24 @@
 package com.logic;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.Scanner;
 
+import com.dao.FXDAOImpl;
 import com.dao.JdbcConnection;
 import com.pojo.Account;
+import com.pojo.Transaction;
 
 public class App {
 
 	public static int counter = 0;
 	public static int month=1;
 	public static int TID_Counter = 100;
+	public static int MID_Counter = 100;
+	public static String date;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 
-//		JdbcConnection jdbc=new JdbcConnection();
-//		jdbc.opsenConnection();
 
 //		//signup();
 //		//Login() 
@@ -29,6 +33,7 @@ public class App {
 		Account account = new Account();
 		SignUp userDetails = new SignUp();
 		Login login = new Login();
+		FXDAOImpl fxDAO=new FXDAOImpl();
 		int ch = 0;
 		System.out.println("\nOpening Balances: ");
 		System.out.printf("\nEUR: %.4f", account.getOpeningBalance_EURO());
@@ -40,14 +45,25 @@ public class App {
 		ch = scan.nextInt();
 
 		do {
-			RRG.IR();
-			RRG.FX();
 
 			System.out.println("\nDay:" + (++counter));
+			StringBuilder sd = new StringBuilder();
+			Transaction t = new Transaction();
+			sd.append(String.valueOf(App.counter));
+			sd.append("/");
+			sd.append(App.month);
+			sd.append("/19");
+			System.out.println(sd);
+			date = sd.toString();
+			RRG.IR();
+			RRG.FX();
+			fxDAO.addFXRates();
+			
 			System.out.println("\nOpening Balances: ");
 			System.out.printf("\nEUR: %.4f", account.getOpeningBalance_EURO());
 			System.out.printf("\nGBP: %.4f", account.getOpeningBalance_GBP());
 			System.out.printf("\nUSD: %.4f", account.getOpeningBalance_USD());
+			
 			do {
 				switch (ch) {
 				case 1:
@@ -58,7 +74,6 @@ public class App {
 					break;
 				case 2:
 					market.start();
-
 					break;
 				case 3:
 					market.display_EOLBal();
@@ -81,6 +96,9 @@ public class App {
 			choice = scan.next().charAt(0);
 		} while (choice == 'y');
 		scan.close();
+		JdbcConnection jdbc=new JdbcConnection();
+		Connection con=jdbc.openConnection();
+		con.commit();
 	}
 
 }

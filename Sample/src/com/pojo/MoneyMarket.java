@@ -1,18 +1,36 @@
 package com.pojo;
 
 public class MoneyMarket {
-	private String lendBorrow;
-	private String txnDate;
-	private String dueDate;
+	private static char lendBorrow;
+	private static String txnDate;
+	private static String dueDate;
 	private int marketId;
-	private double amount_USD = 5200;
-	private double amount_EURO = 9000;
-	private double amount_GBP = -6700;
+	private static double amount_USD = 5200;
+	private static double amount_EURO = 9000;
+	private static double amount_GBP = -6700;
 	private int transactionId;
 	private static double EURO_Base;
 	private static double GBP_Base;
 	private static double USD_Base;
+	private static double interest;
+public static long account;
+	public static long getAccount() {
+	return account;
+}
 
+public static void setAccount(long account) {
+	MoneyMarket.account = account;
+}
+
+	public static double getInterest() {
+		return interest;
+	}
+
+	public static void setInterest(double interest) {
+		MoneyMarket.interest = interest;
+	}
+
+	
 	public double getEURO_Base() {
 		return EURO_Base;
 	}
@@ -37,12 +55,12 @@ public class MoneyMarket {
 		USD_Base = uSD_Base;
 	}
 
-	public String getLendBorrow() {
+	public char getLendBorrow() {
 		return lendBorrow;
 	}
 
-	public void setLendBorrow(String lendBorrow) {
-		this.lendBorrow = lendBorrow;
+	public void setLendBorrow( char lb) {
+		this.lendBorrow = lb;
 	}
 
 	public String getTxnDate() {

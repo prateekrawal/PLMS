@@ -33,6 +33,7 @@ public class UserDAOImpl implements UserDAO {
 			ps.setLong(11, user.getAccountNo_USD());
 
 			rows_inserted = ps.executeUpdate();
+//			con.close();
 //			System.out.println("Rows:" + rows_inserted);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

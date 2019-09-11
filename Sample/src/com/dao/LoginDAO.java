@@ -23,6 +23,7 @@ public class LoginDAO {
 					return username;
 				}
 			}
+			con.close();
 		}
 
 		catch (Exception e) {
