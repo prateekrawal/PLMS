@@ -14,7 +14,7 @@ public class AccountDAOImpl implements AccountDAO{
 	Connection con=JC.openConnection();
 	User user=new User();
 	@Override
-	public int addAccountDetails(Account account,User user) {
+	public int addAccountDetails(Account account) {
 		// TODO Auto-generated method stub 
 		int rows_inserted=0;
 		List<Long> accountNo_curr=new ArrayList<>();
@@ -36,12 +36,12 @@ public class AccountDAOImpl implements AccountDAO{
 			Connection con=JC.openConnection();
 			
 			for(int i=0;i<3;i++) {
-				String INSERT_ACCOUNT_DETAILS="insert into Account values(?,?,?,?)"; 
+				String INSERT_ACCOUNT_DETAILS="insert into Account values(?,?,?)"; 
 			ps=con.prepareStatement(INSERT_ACCOUNT_DETAILS);
 			ps.setLong(1, accountNo_curr.get(i));
 			ps.setString(2,curr_type.get(i));
 			ps.setDouble(3, account_openingBalance.get(i));
-			ps.setInt(4, user.getUserId());
+//			ps.setInt(4, user.getUserId());
 		   //			con.close();
 			ps.addBatch(INSERT_ACCOUNT_DETAILS);
 			}

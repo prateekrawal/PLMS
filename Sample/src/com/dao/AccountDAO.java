@@ -4,5 +4,5 @@ import com.pojo.Account;
 import com.pojo.User;
 
 public interface AccountDAO {
-	int addAccountDetails(Account account,User user);
+	int addAccountDetails(Account account);
 }
