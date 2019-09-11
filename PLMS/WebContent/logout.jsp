@@ -7,9 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-WELCOME TO PLMS
-<a href="signUp.jsp">New User? Sign Up!</a>
-<a href="login.jsp"> LOGIN </a>
-
+You have successfully logged out!!!
+</form>
 </body>
 </html>

@@ -8,5 +8,8 @@
 </head>
 <body>
 Welcome user
+<a href="interest_rate_display.jsp">Display Interest Rate for the day</a>
+<a href="logout.jsp">LOGOUT</a>
+
 </body>
 </html>
