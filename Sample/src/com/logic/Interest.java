@@ -2,21 +2,27 @@ package com.logic;
 
 import java.util.ArrayList;
 import java.util.Map.Entry;
+import java.util.Scanner;
 import java.util.TreeMap;
 
+import com.dao.MoneyMarketDAOImpl;
 import com.pojo.Account;
 import com.pojo.MoneyMarket;
 import com.pojo.Rates;
+import com.pojo.Transaction;
+import com.pojo.User;
 
 public class Interest {
 
 	MoneyMarket mm = new MoneyMarket();
+	MoneyMarketDAOImpl mdao=new MoneyMarketDAOImpl();
+	User user=new User();
+	
 	char lb;
 	char ctype;
 	double IR_EURO;
 	double IR_GBP;
 	double IR_USD;
-
 	public void start() {
 		IR_EURO = calculateInterest(mm.getEURO_Base(), Rates.getEURO_IR_BID(), Rates.getEURO_IR_ASK());
 		System.out.println("interest gained in euro " + IR_EURO);
@@ -29,26 +35,78 @@ public class Interest {
 
 		compare(IR_EURO_USD, IR_GBP_USD, IR_USD);
 
+		mm.setTxnDate(App.date);
+		StringBuilder sd = new StringBuilder();
+		sd.append(String.valueOf((App.counter+1)));
+		sd.append("/");
+		sd.append(App.month);
+		sd.append("/19");
+		System.out.println(sd);
+		String date1 = sd.toString();
+		mm.setDueDate(date1);
+
+		mm.setLendBorrow(lb);
+		mm.setMarketId(++App.MID_Counter);
+		if(ctype=='u')
+			{
+			mm.setInterest(IR_USD);
+			mm.setAccount(user.getAccountNo_USD());
+			}
+		else if(ctype=='e')
+		{
+			mm.setInterest(IR_EURO);
+			mm.setAccount(user.getAccountNo_EURO());
+		}
+			else
+			{
+			mm.setInterest(IR_GBP);
+			mm.setAccount(user.getAccountNo_USD());
+			}
+		
+		mdao.addMarketTransaction();
+		
 		nextDayOpenBal();
+		
+		
 	}
 
 	public void nextDayOpenBal() {
 		Account account = new Account();
 		if (lb == 'l') {
 			if (ctype == 'u')
-				account.setOpeningBalance_USD(account.getOpeningBalance_USD() + IR_USD);
-			else if (ctype == 'g')
+			{				account.setOpeningBalance_USD(account.getOpeningBalance_USD() + IR_USD);
+			System.out.println("look here:"+account.getOpeningBalance_USD());
+			}else if (ctype == 'g')
+			{
 				account.setOpeningBalance_GBP(account.getOpeningBalance_GBP() + IR_GBP);
-			else
+				System.out.println("look here:"+account.getOpeningBalance_GBP());
+				
+				
+			}else
 				account.setOpeningBalance_EURO(account.getOpeningBalance_EURO() + IR_EURO);
+			System.out.println("look here:"+account.getOpeningBalance_EURO());
+			
 		} else {
 			if (ctype == 'u')
-				account.setOpeningBalance_USD(account.getOpeningBalance_USD() - IR_USD);
-			else if (ctype == 'g')
-				account.setOpeningBalance_GBP(account.getOpeningBalance_GBP() - IR_GBP);
-			else
+				{account.setOpeningBalance_USD(account.getOpeningBalance_USD() - IR_USD);
+				System.out.println("look here:"+account.getOpeningBalance_USD());
+				
+				}else if (ctype == 'g')
+				{
+					account.setOpeningBalance_GBP(account.getOpeningBalance_GBP() - IR_GBP);
+					System.out.println("look here:"+account.getOpeningBalance_GBP());
+					
+				}	else
+				{
 				account.setOpeningBalance_EURO(account.getOpeningBalance_EURO() - IR_EURO);
-		}
+				System.out.println("look here:"+account.getOpeningBalance_EURO());
+				
+				}
+				}
+		
+		account.setOpeningBalance_EURO(account.getOpeningBalance_EURO()+mm.getAmount_EURO());
+		account.setOpeningBalance_GBP(account.getOpeningBalance_GBP()+mm.getAmount_GBP());
+		account.setOpeningBalance_USD(account.getOpeningBalance_USD()+mm.getAmount_USD());
 	}
 
 	public double calculateInterest(double base, float bid, float ask) {
@@ -97,7 +155,7 @@ public class Interest {
 				if (IRe >= IRu) 
 				{
 					System.out.printf("\nBorrow in EURO %.4f", Math.abs(IRe));
-					ctype = 'e';
+					//ctype = 'e';
 					if(IRu>=IRg)
 					{
 						System.out.printf("\nBorrow in USD %.4f", Math.abs(IRu));
@@ -114,7 +172,7 @@ public class Interest {
 					System.out.printf("\nBorrow in USD %.4f", Math.abs(IRu));
 					System.out.printf("\nBorrow in EURO %.4f", Math.abs(IRe));
 					System.out.printf("\nBorrow in GBP %.4f", Math.abs(IRg));
-					ctype = 'u';
+					//ctype = 'u';
 				}
 			} 
 			else 
@@ -122,7 +180,7 @@ public class Interest {
 				if (IRg >= IRu) 
 				{
 					System.out.printf("\nBorrow in GBP %.4f", Math.abs(IRg));
-					ctype = 'g';
+					//ctype = 'g';
 					if(IRu>=IRe)
 					{
 						System.out.printf("\nBorrow in USD %.4f", Math.abs(IRu));
@@ -139,7 +197,7 @@ public class Interest {
 					System.out.printf("\nBorrow in USD %.4f", Math.abs(IRu));
 					System.out.printf("\nBorrow in GBP %.4f", Math.abs(IRg));
 					System.out.printf("\nBorrow in EURO %.4f", Math.abs(IRe));
-					ctype = 'u';
+					//ctype = 'u';
 				}
 			}
 		} 
@@ -151,7 +209,7 @@ public class Interest {
 				if (IRe >= IRu) 
 				{
 					System.out.printf("\nInvest in EURO %.4f", Math.abs(IRe));
-					ctype = 'e';
+					//ctype = 'e';
 					if(IRu>=IRg)
 					{
 						System.out.printf("\nInvest in USD %.4f", Math.abs(IRu));
@@ -168,7 +226,7 @@ public class Interest {
 					System.out.printf("\nInvest in USD %.4f", Math.abs(IRu));
 					System.out.printf("\nInvest in EURO %.4f", Math.abs(IRe));
 					System.out.printf("\nInvest in GBP %.4f", Math.abs(IRg));
-					ctype = 'u';
+					//ctype = 'u';
 				}
 			} 
 			else 
@@ -176,7 +234,7 @@ public class Interest {
 				if (IRg >= IRu) 
 				{
 					System.out.printf("\nInvest in GBP %.4f", Math.abs(IRg));
-					ctype = 'g';
+					//ctype = 'g';
 					if(IRu>=IRe)
 					{
 						System.out.printf("\nInvest in USD %.4f", Math.abs(IRu));
@@ -193,9 +251,14 @@ public class Interest {
 					System.out.printf("\nInvest in USD %.4f", Math.abs(IRu));
 					System.out.printf("\nInvest in GBP %.4f", Math.abs(IRg));
 					System.out.printf("\nInvest in EURO %.4f", Math.abs(IRe));
-					ctype = 'u';
+					//ctype = 'u';
 				}
 			}
+			
 		}
+		//write here
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter your investment choice (e/g/u) : ");
+		ctype=sc.next().charAt(0);
 	}
 }

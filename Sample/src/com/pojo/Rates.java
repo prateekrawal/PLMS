@@ -16,7 +16,8 @@ public class Rates {
 	public static float EUR_USD_ASK;
 	public static float GBP_USD_ASK;
 	public static float EUR_GBP_ASK;
-
+	public static String date;
+	
 	public static float getGBP_USD_BID() {
 		return GBP_USD_BID;
 	}
@@ -113,5 +114,4 @@ public class Rates {
 		EUR_GBP_ASK = eUR_GBP_ASK;
 	}
 
-	public String date;
 }

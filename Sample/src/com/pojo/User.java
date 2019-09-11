@@ -11,9 +11,9 @@ public class User {
 	private String country;
 	private String phoneNo;
 
-	private static long AccountNo_USD = 110111;
-	private static long AccountNo_EURO = 110112;
-	private static long AccountNo_GBP = 110113;
+	private static long AccountNo_USD = 1101;
+	private static long AccountNo_EURO = 1102;
+	private static long AccountNo_GBP = 1103;
 
 	public long getAccountNo_USD() {
 		return AccountNo_USD;

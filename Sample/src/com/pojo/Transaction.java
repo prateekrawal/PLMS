@@ -5,7 +5,7 @@ public class Transaction {
 	private char debitCredit;
 	private double amount;
 	private int transactionId;
-	private String timestamp;
+	private StringBuilder timestamp;
 
 	public char getDebitCredit() {
 		return debitCredit;
@@ -31,12 +31,12 @@ public class Transaction {
 		this.transactionId = transactionId;
 	}
 
-	public String getTimestamp() {
+	public StringBuilder getTimestamp() {
 		return timestamp;
 	}
 
-	public void setTimestamp(String timestamp) {
-		this.timestamp = timestamp;
+	public void setTimestamp(StringBuilder sd) {
+		this.timestamp = sd;
 	}
 
 }

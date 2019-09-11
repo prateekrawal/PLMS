@@ -3,7 +3,9 @@ package com.logic;
 import java.text.DecimalFormat;
 import java.util.Random;
 
+import com.dao.InterestDAOImpl;
 import com.pojo.Rates;
+import com.pojo.Transaction;
 
 public class RandomRateGenerator {
 
@@ -33,6 +35,11 @@ public class RandomRateGenerator {
 		System.out.println("GBP Ask Rate:" + Rates.GBP_IR_ASK);
 		System.out.println("GBP Bid Rate:" + Rates.GBP_IR_BID);
 
+		
+	rate.date=App.date;
+		InterestDAOImpl interest=new InterestDAOImpl();
+				interest.addInterest();
+	
 	}
 
 	public float generateIR() {

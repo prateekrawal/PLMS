@@ -4,6 +4,8 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Random;
 
+import com.dao.TransactionDAO;
+import com.dao.TransactionDAOImpl;
 import com.pojo.Transaction;
 import com.pojo.User;
 
@@ -13,21 +15,29 @@ public class RandomCashFlowGenerator {
 	User user = new User();
 	DecimalFormat df = new DecimalFormat("#.####");
 	
-	public void cashflow() {
-		generateCashflow(user.getAccountNo_EURO());
-		generateCashflow(user.getAccountNo_USD());
-		generateCashflow(user.getAccountNo_GBP());
-	}
+	
+//	public void cashflow() {
+//		generateCashflow(user.getAccountNo_EURO());
+//		generateCashflow(user.getAccountNo_USD());
+//		generateCashflow(user.getAccountNo_GBP());
+//	}
 
-	public ArrayList<Transaction> generateCashflow(long accno) {
+	public ArrayList<Transaction> generateCashflow(long accno,String date) {
+	
+		
+		TransactionDAOImpl tdao=new TransactionDAOImpl();
+		
 		int cnt = (int) (((Math.random() * ((10 - 1)))) + 30);
 		ArrayList<Transaction> t_AL = new ArrayList<Transaction>();
 
 		for (int i = 0; i < cnt; i++) {
 
 			t_AL.add(createTransactions());
+	
 		}
 		// func call to dao with (t_AL,accno);
+		
+		tdao.addTransaction(t_AL,date,String.valueOf(accno));
 		return t_AL;
 	}
 
