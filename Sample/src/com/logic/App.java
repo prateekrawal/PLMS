@@ -96,6 +96,7 @@ public class App {
 					break;
 				case 7:
 					market.userCashflow();
+					
 					break;
 				case 8:
 					RCG.generateCashflow(user.getAccountNo_EURO(), App.date,1);
@@ -104,13 +105,14 @@ public class App {
 				}
 
 				System.out.println(
-						"\n\n1. Login\n2. Initiate Cashflow\n3. Display end of the day balance in accounts\n4. Net balance in base currency\n5. Calculate lend/borrow\n6. End Day\n7. Enter Cashflow\n8. Notification Cashflow");
+						"\n\n1. Edit FX rates\n2. Initiate Cashflow\n3. Display end of the day balance in accounts\n4. Net balance in base currency\n5. Calculate lend/borrow\n6. End Day\n7. Enter Cashflow\n8. Notification Cashflow");
 					System.out.println("Enter your choice:");
 				ch = scan.nextInt();
 			} while (ch != 6);
 
 			System.out.println("Start new Day?(y/n)");
 			choice = scan.next().charAt(0);
+			market.updateOpeningBal();
 		} while (choice == 'y');
 		scan.close();
 		JdbcConnection jdbc=new JdbcConnection();

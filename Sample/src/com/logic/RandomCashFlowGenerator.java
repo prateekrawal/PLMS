@@ -36,6 +36,15 @@ public class RandomCashFlowGenerator {
 		// func call to dao with (t_AL,accno);
 		
 		tdao.addTransaction(t_AL,date,String.valueOf(accno));
+		Market m=new Market();
+		char c;
+		if(accno==1101)
+			c='u';
+		else if(accno==1102)
+			c='e';
+		else
+			c='g';
+		m.updateBal(t_AL, c);
 		return t_AL;
 	}
 
