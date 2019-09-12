@@ -48,7 +48,7 @@ public class FXDAOImpl implements FXDAO
 					ps.executeBatch();
 //					con.close();
 				}
-				
+				ps.clearBatch();
 				System.out.println("success");
 //			
 				

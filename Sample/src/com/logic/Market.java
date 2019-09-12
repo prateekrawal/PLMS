@@ -1,7 +1,9 @@
 package com.logic;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
+import com.dao.TransactionDAOImpl;
 import com.pojo.Account;
 import com.pojo.MoneyMarket;
 import com.pojo.Rates;
@@ -22,7 +24,31 @@ public class Market {
 	Rates rate = new Rates();
 	Account acc = new Account();
 	User user = new User();	
-
+	Transaction t=new Transaction();
+	TransactionDAOImpl tdao=new TransactionDAOImpl();
+	public void userCashflow()
+	{
+		ArrayList<Transaction>t_AL=new ArrayList<Transaction>();
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter debit or credit");
+		t.setDebitCredit(sc.next().charAt(0));
+		System.out.println("Enter the amount");
+		t.setAmount(sc.nextDouble());
+		t.setTransactionId(++App.TID_Counter);
+		
+		t_AL.add(t);
+		System.out.println("Enter the account type (e/g/u):");
+		char c=sc.next().charAt(0);
+		
+		if(c=='e')
+			tdao.addTransaction(t_AL,App.date,String.valueOf(user.getAccountNo_EURO()));
+		else if(c=='g')
+			tdao.addTransaction(t_AL,App.date,String.valueOf(user.getAccountNo_GBP()));
+		else
+			tdao.addTransaction(t_AL,App.date,String.valueOf(user.getAccountNo_USD()));
+		
+	}
+	
 	public void start() {
 		RandomCashFlowGenerator RCG = new RandomCashFlowGenerator();
 
@@ -30,9 +56,17 @@ public class Market {
 
 	
 		rate.date = App.date;
-		t_AL_EURO = RCG.generateCashflow(user.getAccountNo_EURO(), App.date); // cashflow func to be called in trigger class
-		t_AL_GBP = RCG.generateCashflow(user.getAccountNo_GBP(), App.date); // cashflow func to be called in trigger class
-		t_AL_USD = RCG.generateCashflow(user.getAccountNo_USD(), App.date); // cashflow func to be called in trigger class
+		
+		int cnt=0;
+		cnt = (int) (((Math.random() * ((10 - 1)))) + 30);
+
+		t_AL_EURO = RCG.generateCashflow(user.getAccountNo_EURO(), App.date,cnt); // cashflow func to be called in trigger class
+		cnt = (int) (((Math.random() * ((10 - 1)))) + 30);
+
+		t_AL_GBP = RCG.generateCashflow(user.getAccountNo_GBP(), App.date,cnt); // cashflow func to be called in trigger class
+		cnt = (int) (((Math.random() * ((10 - 1)))) + 30);
+
+		t_AL_USD = RCG.generateCashflow(user.getAccountNo_USD(), App.date,cnt); // cashflow func to be called in trigger class
 
 		Market market = new Market();
 		moneymarket.setAmount_USD(market.cal_netBal(t_AL_USD, acc.getOpeningBalance_USD()));
