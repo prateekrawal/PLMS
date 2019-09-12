@@ -1,0 +1,21 @@
+#suggestion-table
+{
+    width:100%;
+    height:50vh;
+}
+
+.table-responsive
+{
+    width: 100%;
+    height: 100%;
+}
+
+.suggestions
+{
+    padding:65px;
+    padding-top: 50px;
+}
+.table th, .table td
+{
+    align: center;
+}
