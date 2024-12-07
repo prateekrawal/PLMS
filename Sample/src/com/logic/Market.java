@@ -21,6 +21,7 @@ public class Market {
 	ArrayList<Transaction> t_AL_GBP = new ArrayList<Transaction>();
 
 	MoneyMarket moneymarket = new MoneyMarket();
+
 	Rates rate = new Rates();
 	Account acc = new Account();
 	User user = new User();	
@@ -30,7 +31,7 @@ public class Market {
 	{
 		ArrayList<Transaction>t_AL=new ArrayList<Transaction>();
 		Scanner sc=new Scanner(System.in);
-		System.out.println("Enter debit or credit");
+		System.out.println("Enter debit or credit (D/C)");
 		t.setDebitCredit(sc.next().charAt(0));
 		System.out.println("Enter the amount");
 		t.setAmount(sc.nextDouble());
@@ -47,11 +48,33 @@ public class Market {
 		else
 			tdao.addTransaction(t_AL,App.date,String.valueOf(user.getAccountNo_USD()));
 		
+		updateBal(t_AL,c);
+	}
+	
+	public void updateBal(ArrayList<Transaction> t_AL,char c)
+	{
+		Market market = new Market();
+		if(c=='e')
+		moneymarket.setAmount_EURO(market.cal_netBal(t_AL, moneymarket.getAmount_EURO()));
+		else if(c=='u')
+		moneymarket.setAmount_USD(market.cal_netBal(t_AL, moneymarket.getAmount_USD()));
+		else 
+		moneymarket.setAmount_GBP(market.cal_netBal(t_AL, moneymarket.getAmount_GBP()));
+
+	}
+	
+	public void updateOpeningBal()
+	{
+		acc.setOpeningBalance_EURO(acc.getOpeningBalance_EURO()+moneymarket.getAmount_EURO());
+		acc.setOpeningBalance_GBP(acc.getOpeningBalance_GBP()+moneymarket.getAmount_GBP());
+		acc.setOpeningBalance_USD(acc.getOpeningBalance_USD()+moneymarket.getAmount_USD());
+		
+	
 	}
 	
 	public void start() {
 		RandomCashFlowGenerator RCG = new RandomCashFlowGenerator();
-
+		Market market = new Market();
 		RCG.generateDate();
 
 	
@@ -68,10 +91,9 @@ public class Market {
 
 		t_AL_USD = RCG.generateCashflow(user.getAccountNo_USD(), App.date,cnt); // cashflow func to be called in trigger class
 
-		Market market = new Market();
-		moneymarket.setAmount_USD(market.cal_netBal(t_AL_USD, acc.getOpeningBalance_USD()));
-		moneymarket.setAmount_EURO(market.cal_netBal(t_AL_EURO, acc.getOpeningBalance_EURO()));
-		moneymarket.setAmount_GBP(market.cal_netBal(t_AL_GBP, acc.getOpeningBalance_GBP()));
+		moneymarket.setAmount_USD(market.cal_netBal(t_AL_USD, moneymarket.getAmount_USD()));
+		moneymarket.setAmount_EURO(market.cal_netBal(t_AL_EURO, moneymarket.getAmount_EURO()));
+		moneymarket.setAmount_GBP(market.cal_netBal(t_AL_GBP, moneymarket.getAmount_GBP()));
 
 		moneymarket.setEURO_Base(cal_netBaseEURO());
 		moneymarket.setGBP_Base(cal_netBaseGBP());
@@ -103,7 +125,7 @@ public class Market {
 		for (int i = 0; i < arr.size(); i++) {
 			if (arr.get(i).getDebitCredit() == 'D')
 				total = total - arr.get(i).getAmount();
-			else
+			else if((arr.get(i).getDebitCredit() == 'C'))
 				total = total + arr.get(i).getAmount();
 
 		}
